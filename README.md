@@ -70,6 +70,7 @@
 
 ## 验证码接口
 >`get` api.tp.com/code/:time/:token/:username/:is_exist
+
 |参数|类型|必选可选|默认|描述|
 |:-:|:-:|:-:|:-:|:-:|
 |time|int|必选|无|当前时间的时间戳,避免恶意调用|
@@ -87,6 +88,7 @@
 ## 注册接口
 >`post`api.tp.com/user/register
 |参数|类型|必选或可选|默认值|描述|
+
 |:-:|:-:|:-:|:-:|:-:|
 |user_name|string|必选|无|用户注册的用户名，可以是邮箱或手机号|
 |user_pwd|string|必选|无|注册的密码，32位的MD5哈希值|
@@ -100,12 +102,14 @@
 ```
 ## 用户登陆接口
 >`post`api.tp.com/user/login
+
 |参数|类型|必选或可选|默认值|描述|
 |:-:|:-:|:-:|:-:|:-:|
 |time|int|必选|无|**时间戳**用于判断请求是否超时|
 |token|string|必选|无|锁定来访者的身份|
 |user_name|string|必选|无|手机号或邮箱|
 |user_pwd|string|必选|无|MD5之后的用户密码|
+
 ```json
 {
 	"code": 200,
@@ -121,12 +125,14 @@
 ```
 ## 用户上传头像
 >`post`api.tp.com/user/avatar
+
 |参数|类型|必选or可选|默认值|描述|
 |:-:|:-:|:-:|:-:|:-:|
 |time|int|必选|无|时间戳|
 |token|string|必选|无|锁定来访者的身份|
 |user_id|string|必选|无|用户ID|
 |user_avatar|file|必选|无|用户头像(200*200)|
+
 ```json
 {
     "code": 200,
@@ -136,6 +142,7 @@
 ```
 ## 用户修改密码
 >`post`api.tp.com/user/change_pwd
+
 |参数|类型|必选or可选|默认值|描述|
 |:-:|:-:|:-:|:-:|:-:|
 |time|int|必选|无|时间戳|
@@ -143,6 +150,7 @@
 |user_name|string|必选|无|用户手机或邮箱|
 |user_ini_pwd|string|必选|无|用户原来的密码|
 |user_pwd|string|必选|无|用户的新密码|
+
 ```json
 {
     "code": 200,
@@ -152,6 +160,7 @@
 ```
 ## 用户找回密码
 >`post`api.tp.com/user/reset_pwd
+
 |参数|类型|必选or可选|默认值|描述|
 |:-:|:-:|:-:|:-:|:-:|
 |time|int|必选|无|时间戳|
@@ -159,6 +168,7 @@
 |user_name|string|必选|无|用户手机号或邮箱|
 |code|int|必选|无|验证码|
 |user_pwd|string|必选|无|用户新密码|
+
 ```json
 {
     "code": 400,
@@ -168,6 +178,7 @@
 ```
 ## 用户绑定邮箱
 >`post`api.tp.com/user/bind_email
+
 |参数|类型|必选or可选|默认值|描述|
 |:-:|:-:|:-:|:-:|:-:|
 |time|int|必选|无|时间戳|
@@ -177,6 +188,7 @@
 |code|int|必选|无|验证码|
 
 ## 用户设置昵称
+
 >`post`api.tp.com/user/nickname
 |参数|类型|必选or可选|默认值|描述|
 |:-:|:-:|:-:|:-:|:-:|
@@ -184,6 +196,7 @@
 |token|string|必选|无|锁定来访者的身份，防止数据被篡改|
 |user_id|int|必选|无|用户id|
 |user_nickname|string|必选|无|用户昵称|
+
 ```json
 {
     "code": 200,
@@ -193,11 +206,13 @@
 ```
 ## 新增文章接口
 >`post`api.tp.com/aritcle
+
 |参数|类型|必选or可选|默认值|描述|
 |time|int|必选|无|时间戳|
 |token|string|必选|无|锁定来访者的身份|
 |article_uid|int|必选|无|文章用户id|
 |article_title|string|必选|无|文章的标题|
+
 ```json
 {
     "code": 200,
@@ -207,12 +222,14 @@
 ```
 ## 文章列表接口
 >`get`api.tp.com/articles
+
 |参数|类型|必选or可选|默认值|描述|
 |time|int|必选|无|时间戳|
 |token|string|必选|无|token用于锁定来访者的身份|
 |user_id|int|必选|无|用户id|
 |num|int|可选|10|每页的总数|
 |page|int|可选|1|页码|
+
 ```json
 {
     "code": 200,
@@ -238,11 +255,13 @@
 ```
 ## 查询单个文章信息
 >`get`api.tp.com/article
+
 |参数|类型|必选or可选|默认值|描述|
 |:-:|:-:|:-:|:-:|:-:|
 |time|int|必选|无|时间戳|
 |token|string|必选|无|用于锁定来访者的身份|
 |article_id|int|必选|无|文章id|
+
 ```json
 {
     "code": 200,
@@ -258,6 +277,7 @@
 ```
 ## 修改/保存文章
 >`post`api.tp.com/article
+
 |参数|类型|必选or可选|默认值|描述|
 |time|int|必选|无|时间戳|
 |token|string|必选|无|用于锁定来访者的身份|
@@ -265,6 +285,7 @@
 
 ## 删除文章
 >`delete`api.tp.com/article
+
 |参数|类型|必选or可选|默认值|描述|
 |:-:|:-:|:-:|:-:|:-:|
 |time|int|必选|无|时间戳|
